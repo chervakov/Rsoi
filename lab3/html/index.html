@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/index.css" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+    <header>
+        <img class="header_img" src="../resource/med_1487009767_image.jpg">
+    </header>
+</div>
+<div class="body">
+    <div class="nav">
+        <nav>
+            <div class="nav_links">
+                <a>Главная</a><br>
+                <a href="../html/result.html">Результаты</a>
+            </div>
+        </nav>
+    </div>
+    <div class="aside">
+        <aside>
+            <img class="aside_img" src="../resource/JQyU2e4OOT4.jpg">
+        </aside>
+    </div>
+    <div class="form">
+        <form name="form">
+            <p>Как вы относитесь к нашему магазинусу?</p>
+            <label for="name">Представьтесь по форме</label><br>
+            <input required type="text" id="name"/><br><br>
+
+            <label>Пол: </label>
+            <input type="radio" name="sex" value="Мужчина" checked="checked">Мужчина</input>
+            <input type="radio" name="sex" value="Женщина">Женщина</input>
+
+            <p>Когда вы попали в наш магазин?</p>
+            <input required type="week" min="2018-W18" max="2020-W18" id="week">
+            <br>
+            <br>
+
+            <p>Выберите тип мебели</p>
+            <select id="choice2">
+                <option value="Первый">Первый</option>
+                <option value="Второй">Второй</option>
+                <option value="Третий">Третий</option>
+                <option value="Четвёртый">Четвёртый</option>
+                <option value="Пятый">Пятый</option>
+            </select>
+            <br><br>
+            <label for="range">Ползунок</label>
+            <input id="range" type="range" min="1" max="10"><br><br>
+
+            <label for="color">Ваш любимый цвет</label>
+            <input id="color" type="color" value="#ff0000"><br>
+
+            <label for="checkbox">Посоветуете ли вы магазин своим знакомым?</label>
+            <input id="checkbox" type="checkbox">Да </input>
+
+            <br><br>
+            <button onclick="othername(); ">Субмит</button>
+            <button onclick="clearAll()">Очистить буфер</button>
+            <button type="reset" onclick="reset(); ">Очистить форму</button>
+        </form>
+    </div>
+</div>
+<div class="footer">
+    <footer>
+        <img class="footer_img" src="../resource/med_1487009767_image.jpg">
+    </footer>
+</div>
+</body>
+<script type="text/javascript">
+    var name_data = JSON.parse(localStorage.getItem('name')) || [];
+    var sex_data = JSON.parse(localStorage.getItem('sex')) || [];
+    var week_data = JSON.parse(localStorage.getItem('week')) || [];
+    var furniture_data = JSON.parse(localStorage.getItem('furniture')) || [];
+    var range_data = JSON.parse(localStorage.getItem('range')) || [];
+    var color_data = JSON.parse(localStorage.getItem('color')) || [];
+    var checkbox_data = JSON.parse(localStorage.getItem('checkbox')) || [];
+
+    function othername() {
+
+        var name_value = document.getElementById("name").value;
+        var week_value = document.getElementById("week").value;
+
+        if (name_value !== '' && week_value !== ''){
+         name_data.push(name_value)
+        localStorage.setItem('name', JSON.stringify(name_data))
+
+        week_data.push(week_value)
+        localStorage.setItem('week', JSON.stringify(week_data))
+
+        var sex_value = document.querySelector("input[name='sex']:checked").value;
+        sex_data.push(sex_value)
+        localStorage.setItem('sex', JSON.stringify(sex_data))
+
+        var furniture_value = document.querySelector('#choice2').value;
+        if (furniture_value !== undefined) {
+            furniture_data.push(furniture_value)
+            localStorage.setItem('furniture', JSON.stringify(furniture_data))
+        }
+
+        var range_value = document.getElementById("range").value;
+        range_data.push(range_value)
+        localStorage.setItem('range', JSON.stringify(range_data))
+
+        var color_value = document.getElementById("color").value;
+        color_data.push(color_value)
+        localStorage.setItem('color', JSON.stringify(color_data))
+
+        var checkbox_value = document.getElementById("checkbox").value;
+        checkbox_data.push(checkbox_value)
+        localStorage.setItem('checkbox', JSON.stringify(checkbox_data))
+
+        console.log(name_value)
+        var url = "../html/result.html"
+        window.open(url, '', 'height=800, width=1200')
+        }
+    }
+
+    function clearAll() {
+    localStorage.clear();
+    window.location.reload()
+}
+
+    function reset() {
+        location.reload()
+    }
+</script>
+</html>
