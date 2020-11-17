@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/index.css" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+    <header>
+        <img class="header_img" src="../resource/med_1487009767_image.jpg">
+    </header>
+</div>
+<div class="body">
+    <div class="nav">
+        <nav>
+            <div class="nav_links">
+                <a>Главная</a><br>
+                <a href="../html/result.html">Результаты</a>
+            </div>
+        </nav>
+    </div>
+    <div class="aside">
+        <aside>
+            <img class="aside_img" src="../resource/JQyU2e4OOT4.jpg">
+        </aside>
+    </div>
+    <div class="form">
+            <p>Как вы относитесь к нашему магазинусу?</p>
+            <label for="name">Прикольный текст</label><br>
+            <input type="text" id="name" placeholder="Заполни меня"/><br><br>
+    <div class="button">
+            <button onclick="othername(); ">Субмит</button>
+            <button onclick="add_field()">Добавить поле</button>
+            <button onclick="clearAll()">Очистить буфер</button>
+            <button type="reset" onclick="reset(); ">Очистить форму</button>
+    </div>
+    </div>
+</div>
+<div class="footer">
+    <footer>
+        <img class="footer_img" src="../resource/med_1487009767_image.jpg">
+    </footer>
+</div>
+</body>
+<script type="text/javascript">
+    // var name_data = JSON.parse(localStorage.getItem('name')) || [];
+    // var sex_data = JSON.parse(localStorage.getItem('sex')) || [];
+    // var week_data = JSON.parse(localStorage.getItem('week')) || [];
+    // var furniture_data = JSON.parse(localStorage.getItem('furniture')) || [];
+    // var range_data = JSON.parse(localStorage.getItem('range')) || [];
+    // var color_data = JSON.parse(localStorage.getItem('color')) || [];
+    // var checkbox_data = JSON.parse(localStorage.getItem('checkbox')) || [];
+    var name_data = []
+
+    function othername() {
+        var temp_list = []
+        var elem = document.getElementsByTagName('input').length
+        for (var i = 0; i < elem; i++){
+            if (document.getElementsByTagName("input")[i].value !== ''){
+                console.log(document.getElementsByTagName("input")[i].value)
+                var name_value = document.getElementsByTagName("input")[i].value
+                temp_list.push(name_value)
+            }
+        }
+        name_data.push(temp_list)
+        localStorage.setItem('name', JSON.stringify(name_data))
+
+        // var week_value = document.getElementById("week").value;
+        //
+        // if (name_value !== '' && week_value !== ''){
+        //  name_data.push(name_value)
+        // localStorage.setItem('name', JSON.stringify(name_data))
+        //
+        // week_data.push(week_value)
+        // localStorage.setItem('week', JSON.stringify(week_data))
+        //
+        // var sex_value = document.querySelector("input[name='sex']:checked").value;
+        // sex_data.push(sex_value)
+        // localStorage.setItem('sex', JSON.stringify(sex_data))
+        //
+        // var furniture_value = document.querySelector('#choice2').value;
+        // if (furniture_value !== undefined) {
+        //     furniture_data.push(furniture_value)
+        //     localStorage.setItem('furniture', JSON.stringify(furniture_data))
+        // }
+        //
+        // var range_value = document.getElementById("range").value;
+        // range_data.push(range_value)
+        // localStorage.setItem('range', JSON.stringify(range_data))
+        //
+        // var color_value = document.getElementById("color").value;
+        // color_data.push(color_value)
+        // localStorage.setItem('color', JSON.stringify(color_data))
+        //
+        // var checkbox_value = document.getElementById("checkbox").value;
+        // checkbox_data.push(checkbox_value)
+        // localStorage.setItem('checkbox', JSON.stringify(checkbox_data))
+        //
+        // console.log(name_value)
+        var url = "../html/result.html"
+        window.open(url, '', 'height=800, width=1200')
+    }
+
+    function clearAll() {
+    localStorage.clear();
+    window.location.reload()
+}
+
+    function reset() {
+        var elem = document.getElementsByTagName('input').length
+        console.log(elem)
+        for (var i = 0; i < elem; i++) {
+            var name = document.getElementsByTagName('input')[i]
+            name.value = ''
+            name.setAttribute("style", "height: 50px; width: 150px; background-color: yellow")
+            name.setAttribute('placeholder', 'Заполни меня!')
+        }
+    }
+
+    function add_field() {
+        var x = document.createElement('input');
+        x.setAttribute('type', 'text');
+        x.setAttribute('placeholder', 'Hello World!');
+        x.setAttribute('id', 'name');
+        var body = document.getElementsByClassName('form')[0]
+        body.append(x)
+    }
+</script>
+</html>
