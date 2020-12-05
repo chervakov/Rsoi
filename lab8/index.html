@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Ajax </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+   <!-- <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+    </head>
+    <body>
+    <form name="opros" id='form' > 
+            <div class = "main">
+             <div class = "field">
+        <label>Название книги:</label>
+<input class = "input-style" type = "text" name = "name" id = "id1" placeholder="Введите книгу"  >
+<br>
+<label>Автор:</label>
+<input class = "input-style" type = "text" name = "author" id = "id2" placeholder="Введите автора" >
+<br>
+<label>Год:</label>
+    <input class="input-style" type="text" name="year" id = "id3" placeholder="Введите год"> <br>
+<label>Страницы:</label>
+<input class="input-style" type="text" id="id4" name="pages" placeholder="Введите страницы">
+ <br>
+<label>Цвет:</label>          
+<input type="checkbox" id="cl1" >Синий<br>
+<input type="checkbox" id="cl2"> Красный<br>
+</div>  
+    <input type = "button" value = "Заполнить поля" id="b1">
+<input type = "button" value = "Доп текст" id="b2">
+    <input type = "reset" value = "Очистить" id="b3">
+    <input type = "button"  value = "Невидимые" id="b4">
+    <input type = "button"  value = "Bind" id="b5">             
+    </div> 
+        </form>  
+<div id="modal_form">
+    <div id="modal_close"></div></div>
+<div id="overlay"></div>
+    <div class="error"> ЕСТЬ ПУСТЫЕ ПОЛЯ </div>
+		<script src="js/script.js"></script>
+    </body>
+</html>

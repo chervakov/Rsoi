@@ -1,0 +1,56 @@
+body{
+    background-image: url("../resource/fon.jpg");
+    background-size: cover;
+}
+
+table{
+    background-color: white;
+}
+
+td{
+    width: 50%;
+    text-align: center;
+}
+
+.class1{
+    background-color: beige;
+    color: red;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px;
+    width: 60%;
+    float: left;
+}
+
+.class2{
+    background-color: beige;
+    color: purple;
+    font-family:"Times New Roman", Helvetica, sans-serif;
+    font-size:15px;
+    width: 60%;
+    float: left;
+}
+
+#id1{
+    width: 200px;
+    margin-left: 30px;
+}
+
+.id1after{
+    border: 3px solid gray;
+}
+
+#id2{
+    width: 200px;
+    margin-left: 30px;
+}
+
+.class1after{
+}
+
+.class1after:before{
+    content: url("../resource/smile.PNG");
+}
+
+.class2after{
+    border: 3px solid gray;
+}

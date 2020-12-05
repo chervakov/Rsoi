@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body onload="loadTable()">
+        <div class="class1" style="text-align: center">
+
+            <h2 align="center">Группы студентов</h2>
+
+            <form method="post" onsubmit="addGroup()">
+
+                <div id="mainInfo">
+
+                    <input type="text" placeholder="Номер группы" id="groupNumber" name="groupNumber" required pattern="[0-9]{1,6}"><br><br>
+
+                    <label for="course">Курс</label>
+                    <select id="course" name="course">
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>
+                        <option value="IV">IV</option>
+                    </select><br><br>
+
+                    <label for="facultat">Факультет</label>
+                    <select id="facultat" name="facultat">
+                        <option value="ФКП">ФКП</option>
+                        <option value="ФИТУ">ФИТУ</option>
+                        <option value="ФРЭ">ФРЭ</option>
+                        <option value="ФКСИС">ФКСИС</option>
+                        <option value="ФИК">ФИК</option>
+                        <option value="ИЭФ">ИЭФ</option>
+                    </select><br><br>
+
+                    <label for="studentQuantity">Количество учащихся</label>
+
+                    <input  type="number" id="studentQuantity" name="studentQuantity" min="1" max="30" required><br><br>
+
+                    <input type="email" placeholder="Адрес эл. почты группы" id="email" name="email" required><br><br>
+
+                    <button class="orange" type="button" id="addInfo" onclick="addNewProperties()">Другая информация</button>
+
+                </div><br><br>
+
+                <button class="blue" type="submit" name="submit">Отправить</button>
+
+                <button type="reset" name="reset">Сбросить</button><br><br>
+
+            </form>
+
+            <label for="groupID">Удалить запись с ID</label>
+
+            <select id="groupID" name="groupID">
+
+            </select>
+
+            <button class="red" type="button" name="submit" onclick="deleteGroup(); loadTable()">Удалить</button><br><br>
+
+            <button class="orange" type="button" name="submit" onclick="sortGroup()">Список групп, где меньше 20 учащихся</button>
+
+            <br><br>
+
+            <table id="groupTable" border="1" cellpadding="5" style="width: 100%">
+                <tr id="groupProperties">
+                    <th>ID</th>
+                    <th>Номер группы</th>
+                    <th>Курс</th>
+                    <th>Факультет</th>
+                    <th>Кол-во учащихся</th>
+                    <th>E-mail группы</th>
+                </tr>
+            </table>
+
+        </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    background: url("../resource/фон.jpg");
+    background-size: cover;
+    font-family: cambria, serif;
+    font-size: 16px;
+}
+
+.class1 {
+    padding: 20px;
+    background: aqua;
+    width: 60%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+button, select{
+    background-color: yellow;
+    height: 30px;
+    color: blue;
+    text-align: center;
+    font: normal 17px arial;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: yellowgreen;
+}
+
+select:hover{
+    background-color: yellowgreen;
+}
+
+input{
+    border-radius: 5px;
+    height: 20px;
+    transition: width 0.4s ease-in-out;
+    -webkit-transition: width 0.4s ease-in-out;
+}
+
+input[type = number]:focus{
+    background-color: yellowgreen;
+}
+
+input[type = text]:focus{
+    width:  30%;
+    background-color: yellowgreen;
+}
+
+input[type = email]:focus{
+    width:  30%;
+    background-color: yellowgreen;
+}
+
+input:invalid{
+    border-color: red;
+}
